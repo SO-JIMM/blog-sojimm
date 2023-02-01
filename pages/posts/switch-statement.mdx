@@ -1,0 +1,51 @@
+---
+title: JavaScript Switch Statement
+date: 2023-01-25T05:07:08.376Z
+description: JavaScript Switch Statement And Lexical Scoping
+tag: javascript
+author: SO-JIMM
+---
+
+In order to seperate each `case` block when using the `switch` statement, we need to make use of _lexical scoping_.
+
+We use curly brackets to wrap each `case` block to achieve seperation:
+
+```js
+const action = "say_hello"
+switch (action) {
+  case "say_hello": {
+    // added brackets
+    const message = "hello"
+    console.log(message)
+    break
+  } // added brackets
+  case "say_hi": {
+    // added brackets
+    const message = "hi"
+    console.log(message)
+    break
+  } // added brackets
+  default: {
+    // added brackets
+    console.log("Empty action received.")
+  } // added brackets
+}
+```
+
+Otherwise, we will encounter an `Uncaught SyntaxError` because we are declaring variables that have already been declared!
+
+```js
+const action = "say_hello"
+switch (action) {
+  case "say_hello":
+    const message = "hello"
+    console.log(message)
+    break
+  case "say_hi":
+    const message = "hi"
+    console.log(message)
+    break
+  default:
+    console.log("Empty action received.")
+}
+```

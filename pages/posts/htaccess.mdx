@@ -1,0 +1,27 @@
+---
+title: Apache and .htaccess files
+date: 2023-01-11T05:41:23.845Z
+description: Make use of Apache's Configuration
+tag: backend, server
+author: SO-JIMM
+---
+
+`.htaccess` is an Apache configuration file that stands for 'hypertext access.'
+
+These are text files used to invoke an exception to the global settings that apply to the various directories of an Apache website.
+
+Placing the file in one directory will override the global settings that previously flowed down to that directory and its subdirectories.
+
+The following `.htaccess` file contains the configuration of which file to serve when someone visits the domain:
+
+```apache
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+RewriteRule ^index\.html$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-l
+RewriteRule . /index.html [L]
+</IfModule>
+```

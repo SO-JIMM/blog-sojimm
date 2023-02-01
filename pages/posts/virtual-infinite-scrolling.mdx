@@ -1,0 +1,23 @@
+---
+title: Virtual vs. Infinite Scrolling
+date: 2023-02-01T15:39:35.083Z
+description: Investigating different ways to fetch and display items
+tag: css, fetch
+author: SO_JIMM
+---
+
+## Infinite Scrolling
+
+loads a list of elements lazily. Meaning, that it only loads the elements to fill the client window and loads more as necessary. For example, think about the news feed on Facebook or Instagram. Instead of loading all of the posts at once, the application waits until you reach the bottom of the page to load more content.
+
+The problem with infinite scrolling is that more and more that is appended to the application, thus increasing the load on the DOM.
+
+## Virtual Scrolling
+
+Virtual scrolling is widely used in large data grids that have hundreds of thousands or millions of rows and tens or hundreds of columns.
+
+Each time the user scrolls out of the set of visible items, the content is rebuilt: new items are fetched and rendered, old ones are destroyed, padding elements are recalculated, etc.
+
+In a virtual scrolling strategy, the total number of elements remains the same as the user scrolls, just that the current ones are replaced with the next ones.
+
+You can also imagine this as if walking on a bridge that's currently being built right in front of you and destroyed right behind you. From your perspective, it would feel like walking on a complete bridge, and you wouldn't know the difference.

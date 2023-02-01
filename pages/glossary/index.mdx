@@ -1,0 +1,197 @@
+---
+type: page
+title: Glossary
+date: 2021-03-19
+---
+
+### Callback Function
+
+Essentially a callback function is used in another function to be executed eventually. This other function decides when to execute the function and which arguments it passes to the function.
+
+```js
+function filter(list, filterFn) {
+  let newList = []
+
+  for (let i = 0; i < list.length; i++) {
+    const item = list[i]
+
+    if (filterFn(item)) {
+      newList.push(item)
+    }
+  }
+
+  return newList
+}
+
+const result = filter([3, 6, 1], function greaterThanFive(item) {
+  return item > 5
+})
+
+console.log(result)
+// [6]
+
+function greaterThanFive(item) {
+  return item > 5
+}
+
+const result = filter([3, 6, 1], greaterThanFive)
+
+console.log(result)
+// [6]
+```
+
+### Production, (going to)
+
+is the process of making your application ready to be deployed and consumed by users. In the production stage, we optimize for the end-users, and their experience using the application. It aims to transform the code to make it performant and accessible.
+
+### Bundling
+
+is the process of resolving the web of dependencies and merging (or ‘packaging’) the files (or modules) into optimized bundles for the browser, with the goal of reducing the number of requests for files when a user visits a web page. Developers break up their application into modules, components, and functions that can be used to build larger pieces of their application. Exporting and importing these internal modules, as well as external third-party packages, creates a complex web of file dependencies.
+
+### Code Splitting
+
+is the process of splitting the application’s bundle into smaller chunks required by each entry point. The goal is to improve the application's initial load time by only loading the code required to run that page. Developers usually split their applications into multiple pages that can be accessed from different URLs. Each of these pages becomes a unique entry point into the application.
+
+### Runtime (or request time)
+
+refers to the period of time when your application runs in response to a user’s request, after your application has been built and deployed.
+
+In the context of web applications
+
+- The client refers to the browser on a user’s device that sends a request to a server for your application code. It then turns the response it receives from the server into an interface the user can interact with.
+
+- Server refers to the computer in a data centre that stores your application code, receives requests from a client, does some computation, and sends back an appropriate response.
+
+### Void or `void`
+
+A function that returns nothing is said to return void – a complete lack of any value.
+
+### Isomorphic "Universal"
+
+server-rendered web apps are also sometimes called “isomorphic”, meaning that code is shared between the client and server.
+
+### Virtual Machine
+
+Software version of a computer. Each virtual machine acts like a complete computer, running an operating system and programs. When you need computing resources, virtual machines give you more flexibility, help save time and money, and are a more efficient way to use hardware than just running one operating system on physical hardware.
+
+### Root Partition
+
+Sometimes called parent partition. Manages machine-level functions such as device drivers, power management, and device hot addition/removal. The root (or parent) partition is the only partition that has direct access to physical memory and devices.
+
+### Hyper-V
+
+Hyper-V lets you run multiple operating systems as virtual machines on Windows. Hyper-V enables running virtualized computer systems on top of a physical host. These virtualized systems can be used and managed just as if they were physical computer systems, however they exist in virtualized and isolated environment. Special software called a hypervisor manages access between the virtual systems and the physical hardware resources. Virtualization enables quick deployment of computer systems, a way to quickly restore systems to a previously known good state, and the ability to migrate systems between physical hosts.
+
+### Continuous Integration
+
+Continuous integration systems let you automatically build and test your app every time you check in updates to your source control system.
+
+### Lamda Function Lambda Function, also referred to as ### Anonymous Function
+
+is same as a regular python function but can be defined without a name. While normal functions are defined using the `def` keyword, anonymous functions are defined using the `lambda` keyword. However,they are restricted to single line of expression. They can take in mutliple parameters as in regular functions. You can implement a lambda function without using a variable name. You can also directly pass the argument values into the lambda function right after defining it using paranthesis. This cannot be done using def functions.
+
+```python
+# Lambda functions can be Immediately Invoked
+(lambda x,y : x*y)(5,7)
+#> 35
+
+# Using lambda inside filter function
+mylist = [2,3,4,5,6,7,8,9,10]
+list_new  = list(filter(lambda x : (x%2==0), mylist))
+print(list_new)
+#> [2, 4, 6, 8, 10]
+
+df = pd.DataFrame([[1,2,3],[4,5,6]],columns = ['First','Second','Third'])
+df['Forth']= df.apply(lambda row: row['First']*row['Second']* row['Third'], axis=1)
+
+# When used with df.appplymap() it applies the lambda function to every element of the dataframe.
+df = df.applymap(lambda x: x*x)
+```
+
+### View
+
+A _view_ is the basic building block of UI: a small rectangular element on the screen which can be used to display text, images, or respond to user input. Even the smallest visual elements of an app, like a line of text or a button, are kinds of views
+
+### Server
+
+The word "server" has multiple related meanings depending on the context:
+
+- The application that opened up a socket to listen for incoming requests
+- An application that is specifically able to handle HTTP requests and send back responses
+- The physical or virtual machine that is running that server application
+
+> Here, we're going to focus on the "HTTP request handling application" meaning.
+> Every HTTP server application starts handling a request by accepting an incoming socket connection, and parsing the request contents into some internal data structure. The server then inspects the HTTP request path and the >method to determine the intent of the request.
+> Depending on how the server has been written and configured, it will then handle the request by doing some combination of:
+>
+> - Reading files from disk
+> - Connecting to a database and loading / updating data
+> - Updating session tracking information internally
+> - Running developer-specified logic
+>   Ultimately, the server application will fill out an HTTP response message based on all of the processing, write it to the socket, and close the connection.
+
+Servers typically use a convention that if /some-folder/index.html exists, it will be used as the response contents for a request to GET /some-folder/. This pattern has carried over into many other areas as well. For example, a server written using the PHP language might use /some-folder/index.php to handle requests, and the Node.js CommonJS module format will handle an attempt to load require('some-folder') by opening some-folder/index.js if it exists.
+
+Response Formats Servers can send back any data they want in a response, but most responses are sent back with one of a few common formats:
+
+HTML: the standard markup language that describes the structure and content of a web page
+CSS: the standard styling language used to define the appearance of a web page
+JSON: a text-based data format based on the syntax for JavaScript objects, arrays, and primitive values
+XML: a customizable text-based data format based on nested tags, similar to HTML
+Actual static files (images, JavaScript files, etc)
+For data, JSON has become the de-facto standard data transfer format.
+
+### Routing
+
+refers to determining what code to run based on a request URL. Servers normally use a combination of the HTTP request method and the request URL path to determine what code should handle a request. For example, GET /users might be handled by one specific function, POST /users by a second function, and GET /images/header.png by another function
+
+### Website
+
+is a group of interlinked web pages that are globally accessible and tied to a single domain name. Individuals, businesses, and organizations are responsible for developing and maintaining websites, which may be hosted on a single server or multiple servers. Web designers use markup languages like HTML, CSS, and JavaScript to create the user interface and increase its functionality. Users can access websites via a network like the internet or via a private local network with an IP address.
+
+Websites serve multiple purposes, but the main purpose of websites is to inform. Modern websites have web application elements, but for websites, informing visitors is more important than interactivity. Web designers must reach a balance: Websites need to be user-friendly, but the website's level of interactivity should support the website's main purpose and allow users to easily find vital and pertinent information.
+
+### Web application
+
+is a program or software that users can access via a web browser. Developers create the appearance of web applications by using markup languages like HTML, CSS and JavaScript. All major browsers can support web applications.
+
+Web applications can inform users, but their main function is for users to interact with the software or program and perform specific functions. The interaction between a user and a web application is called a dialogue. In a dialogue, the user clicks an onscreen button or submits a form to get a response from the page. The response could be something like a document download, electronic payment, an online chat, a chart or another record of personalized information.
+
+Examples of web applications include banking applications, online stores, social networks and map widgets. Another example of a web application is Software as a Service, or SaaS, which is normally a paid service that only authorized users can access.
+
+Rendering Websites and web pages generally have different relationships with servers and browsers in terms of page rendering. Most of the work that is done to render a page of a website is done at the server. The server transfers the data (coding) to a browser to render pages.
+
+With web applications, much of the work is done at the browser. The server transfers the app's data to the browser, which renders a page with JavaScript and/or other plugins that are needed for the web app's functionality.
+
+To better distinguish between a website and a web application, you can study their similarities and differences. Similarities between websites and web applications include:
+
+- Websites and web applications are run in browsers
+- Users need to have internet access to reach websites and use web applications
+- Web designers and developers use the same programming languages to create the front-ends (the appearance) and back-ends (the functionality) of websites and web apps
+- Many websites have interactive elements, as do web applications
+- Like websites, web applications use integration
+- Both websites and web apps use authentication
+
+In many ways, it is hard to distinguish websites from web apps, even for experienced coders. One reason may be the fact that modern websites will host web apps. Also, some web apps are all someone will be able to interact with when visiting a specific domain, which leads people to refer to the app as its own website. However, there are ways to distinguish websites from web apps, even if the differences appear to be subtle.
+
+### Web Server
+
+Web servers are software or hardware (or both together) that stores and delivers content to a web browser at a basic level. The servers communicate with browsers using Hypertext Transfer Protocol (HTTP). Web servers can also support SMTP (Simple Mail Transfer Protocol) and FTP (File Transfer Protocol).
+
+Web servers are also used for hosting websites and data for web applications. They can host single websites and multiple websites using virtualization.
+
+### Web Frameworks
+
+are collections of functions, objects, rules and other code constructs designed to solve common problems, speed up development, and simplify the different types of tasks faced in a particular domain.
+
+Client-Side web frameworks simplify layout and presentation tasks while _Server-Side web frameworks_ provide a lot of "common" web server functionality that you might otherwise have to implement yourself (e.g. support for sessions, support for users and authentication, easy database access, templating libraries, etc.).
+
+### Production environment
+
+is the environment provided by the server computer where you will run your website for external consumption. The environment includes:
+
+- Computer hardware on which the website runs.
+- Operating system (e.g. Linux or Windows).
+- Programming language runtime and framework libraries on top of which your website is written.
+- Web server infrastructure, possibly including a web server, reverse proxy, load balancer, etc.
+- Databases on which your website is dependent.

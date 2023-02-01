@@ -1,0 +1,51 @@
+---
+title: React Router
+date: 2023-01-02T15:39:35.083Z
+description: Client Side Routing In A React App
+tag: react, client-side, routing
+author: SO-JIMM
+---
+
+import Image from "next/image"
+
+`<Link />` component is an underlying `<anchor />` tag, however it navigates without refreshing your entire application.
+
+`<BrowserRouter />` is what you'll use 99% of the time.
+
+`<StaticRouter />` is what you might use if you are wanting to Server Side Render. You explicitly say what "page/component" you want to render.
+
+`<HashRouter />` would be what you might use if you were working on a shared server and cannot alter your url. Anything after the `#` isn't technically partof our url.
+
+`<MemoryRouter />` doesn't rely on the url bar and is stored in memory. This is useful for testing code as you may not be testing in an environment that accesses a browser.
+
+<Image
+  src='/images/router-root.png'
+  alt='PhotoRoot'
+  width={1125}
+  height={750}
+  className='next-image'
+/>
+<br />
+<Image
+  src='/images/router-sales.png'
+  alt='Photo'
+  width={1125}
+  height={750}
+  className='next-image'
+/>
+<br />
+<Image
+  src='/images/router-invoices.png'
+  alt='Photo'
+  width={1125}
+  height={750}
+  className='next-image'
+/>
+<br />
+<Image
+  src='/images/router-invoice-id.png'
+  alt='Photo'
+  width={1125}
+  height={750}
+  className='next-image'
+/>
