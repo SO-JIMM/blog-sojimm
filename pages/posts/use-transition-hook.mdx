@@ -1,0 +1,14 @@
+---
+title: React useTransition() Hook
+date:
+description: Update the state without blocking the UI!
+tag: React, hooks
+author: SO-JIMM
+---
+
+Call useTransition at the top level of your component to mark some state updates as _transitions_.
+
+useTransition returns an array with exactly two items:
+
+1. The isPending flag that tells you whether there is a pending transition
+2. The `startTransition` function that lets you mark a state update as a transition
