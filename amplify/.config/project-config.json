@@ -1,11 +1,11 @@
 {
-  "projectName": "blogsojimm",
+  "projectName": "nextblog",
   "version": "3.1",
   "frontend": "javascript",
   "javascript": {
     "framework": "react",
     "config": {
-      "SourceDir": "",
+      "SourceDir": "src",
       "DistributionDir": "out",
       "BuildCommand": "npm.cmd run-script build",
       "StartCommand": "npm.cmd run-script start"

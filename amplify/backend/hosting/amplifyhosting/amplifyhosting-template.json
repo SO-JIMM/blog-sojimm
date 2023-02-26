@@ -1,6 +1,6 @@
 {
   "AWSTemplateFormatVersion": "2010-09-09",
-  "Description": "{\"createdOn\":\"Windows\",\"createdBy\":\"Amplify\",\"createdWith\":\"10.5.2\",\"stackType\":\"hosting-amplifyhosting\",\"metadata\":{}}",
+  "Description": "{\"createdOn\":\"Windows\",\"createdBy\":\"Amplify\",\"createdWith\":\"10.7.3\",\"stackType\":\"hosting-amplifyhosting\",\"metadata\":{}}",
   "Parameters": {
     "env": {
       "Type": "String"
